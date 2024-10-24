@@ -1,0 +1,1117 @@
+{
+   "levels":[
+      {
+         "pathName":"SeaOfCube",
+         "title":"301 SeaOfCube",
+         "instructionEN":"EN",
+         "instructionTW":"TW",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Button_Test",
+         "title":"303 Controller Button Test",
+         "instructionEN":"Steps: Connected controllers.
+    1. Try all buttons listed in the front panel.
+    2. All buttons' behaviours are correct.",
+         "instructionTW":"測試步驟－－ (手把必須連線)
+    1.測試畫面上所列的所有按鍵。
+    2.確認所有按鍵的行為皆正常。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"PermissionManager_Test",
+         "title":"307 Permission Manager Test",
+         "instructionEN":"Case: Request permission
+    Steps: 
+        1.Press digital trigger button of right hand controller.
+        2.Click yes to grant permission.
+    Expected result: 
+        Permission request dialog will show.
+        
+    Note: This map only has right controller",
+         "instructionTW":"[Finch/MI6] 測試步驟－－  (手把必須連線且權限還沒請求過)
+1. 按下板機要求權限
+  預期結果：
+    a. 按下板機會跳出要求權限的畫面 (要允許 VRTestApp 拍照及錄製影片嗎?)
+    b. 有兩項權限要求 (1/2)
+2. 按下拒絕
+  預期結果：
+    a. 跳出要求第二項權限的畫面 (要允許 VRTestApp 存取您的連絡人嗎?)
+    b. 有兩項權限要求 (2/2)
+3. 按下拒絕
+  預期結果：
+    a. 回到場景畫面
+4. 按下板機要求權限
+  預期結果：
+    a. 按下板機會跳出要求權限的畫面 (要允許 VRTestApp 拍照及錄製影片嗎?)
+    b. 有兩項權限要求 (1/2)
+5. 按下允許
+  預期結果：
+    a. 跳出要求第二項權限的畫面 (要允許 VRTestApp 存取您的連絡人嗎?)
+    b. 有兩項權限要求 (2/2)
+6. 按下允許
+  預期結果：
+    a. 回到場景畫面
+7. 按下板機要求權限
+  預期結果：
+    a. 不會跳出權限請求的畫面
+    
+    Note: This map only has right controller",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"CameraTexture_Test",
+         "title":"308 Camera Texture Test",
+         "instructionEN":"Case1: Start Camera
+    Precondition: Make sure you already pass Permission manager test.
+    Expected result: 
+        Camera preview image show and update frequently. Camera device info is updated.
+        Camera Texture will be cropped according to FOV.
+        Clamped region of cropped texture will be black.
+Case2: Stop Camera.
+    Expected result: 
+        Camera preview image stop and is hidden. Camera device info is hidden.",
+         "instructionTW":"[Finch/MI6] 測試步驟－－  (手把必須連線且 Camera 權限已請求過)
+1. 按下 Start Camera
+ 預期結果：
+   a. 畫面上出現 Camera 兩眼的灰階影像，其右側顯示相機影像的資訊
+   b. Camera 影像會按FOV 被裁切
+   c. Camera 影像裁切後被 Clamp 的部份會被塗成黑色
+2. 按下 StopCamera
+ 預期結果：
+   a. Camera的影像及資訊皆消失",
+         "hidden":true,
+         "internal":false
+      },
+      {
+         "pathName":"BatteryStatus_Test",
+         "title":"309 Battery Status Test",
+         "instructionEN":"Case: Get battery status event
+    Precondition: NA
+    Step: 1. Launch test case map
+              2. recenter to connect controller
+    Expected result :
+        When HMD is connect, HMD battery percentage will be show.
+        When controller is connect, controller battery percentage will be show.
+        
+        Note: This map is not controlled by interaction mode.",
+         "instructionTW":"BatteryStatus_Test
+[Finch] 測試步驟－－  (手把必須連線)
+預期結果：
+    a. 畫面上出現右手 Finch 手把電量。
+    b. 畫面上出現左手電量顯示 not available
+    c. 畫面上出現 HMD 電量。
+[MI6] 測試步驟－－  (手把必須連線)
+預期結果：
+    a. 畫面上出現兩支 MI6手把電量。
+    b. 畫面上出現 HMD 電量。
+    
+注意: 此場景不受 interaction mode 管理",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Teleport_Controller_Test",
+         "title":"311 Teleport Controller Test",
+         "instructionEN":"
+Steps:
+    1. Take one step right.
+    2. Point your controller toward a plate which you want to go.
+    3. Press right-hand controller Trigger button.
+Expected Result:
+    You will teleport to the center of the plate you pointed.
+Steps:
+    Do the same thing like above steps, but press left-hand controller Trigger button.
+Expected Result:
+    You will teleport to the center of the plate you pointed. And a red rectangle right in front of you.",
+         "instructionTW":"
+1.向右跨一步並且用控制器指向要傳送過去的板子，按下右手Trigger按鈕。
+    預期結果: 傳送到板子上且在正中央。
+2.向右跨一步並且用控制器指向要傳送過去的板子，按下左手Trigger按鈕。
+    預期結果: 傳送到板子上且在正中央，一個紅色方塊立刻出現在你的正前方。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Recenter_Test",
+         "title":"101 Recenter",
+         "instructionEN":"
+Yaw_Only:
+    1. Take off HMD, and remember where you standing at and the direction you faced in REAL WORLD. Then Put on HMD.
+    2. The user can step away from the graph of coordinates (0,0,0) and turn 90 degrees at random.
+    3. Press the \"Red\" button.
+  ExpectedResult:
+    1. The panel should be in front of the user. The icon of the coordinate (0,0,0) is still at a distance.
+	2. Put down the controller and observe if the hand model at the right position.
+	3. [Optional] Observe if the Tracker at the right position.
+
+YawAndPosition:    
+    1. Take a step back.
+    2. User can step away from the graph of coordinates (0,0,0) and turn 90 degrees at random.
+    3. Press the \"Green\" button.
+  ExpectedResult:
+    1. The panel should be in front of the user. The icon of the coordinate (0,0,0) is on the user's foot or head.
+ 	2. Put down the controller and observe if the hand model at the right position.
+	3. [Optional] Observe if the Tracker at the right position.
+
+Position:
+	1. Step away from the graph of coordinates (0,0,0).
+	2. Press the \"Orange\" button.
+  ExpectedResult:
+    1. The icon of the coordinate (0,0,0) is on the user's foot or head.
+ 	2. Put down the controller and observe if the hand model at the right position.
+	3. [Optional] Observe if the Tracker at the right position.
+
+RotationAndPosition:
+    1. Lying down and look up.
+	2. Press the \"Blue\" button.
+  ExpectedResult:
+    The panel should be in front of your sight.
+
+Disable:
+    Press the \"Yellow\" button then back to the coordinate (0,0,0) of the icon. 
+  ExpectedResult:
+    You should be at the position while you enter the test.",
+         "instructionTW":"
+測試步驟：
+Yaw_Only:
+    user 在站定的位置做記號, 並記下面對的方向, 戴上HMD, user 跨一步離開座標(0,0,0)的圖示, 隨意轉90度, 按“ 紅色 ” 按鈕。
+  預期結果：
+    此時面板應轉到user正前方, 座標(0,0,0)的圖示仍在一步距離之外。
+	放下控制器出現手模型，確認手模型位置是否正確。
+	[可選的]如果有Tracker，請確認Tracker位置是否正確。
+YawAndPosition:
+    延續上面測試,座標(0,0,0)的圖示仍在一步距離, 隨意轉90度, 按“ 綠色 ” 按鈕。
+  預期結果：
+    此時面板應轉到user正前方, 座標(0,0,0)的圖示則正在user的腳或頭上。
+	放下控制器出現手模型，確認手模型位置是否正確。
+	[可選的]如果有Tracker，請確認Tracker位置是否正確。
+Position:
+    跨一步離開座標(0,0,0), 隨意轉90度, 按“ 橘色 ” 按鈕。
+  預期結果：
+    面板不會在user正前方，但座標(0,0,0)的圖示需正在user的腳或頭上。
+	放下控制器出現手模型，確認手模型位置是否正確。
+	[可選的]如果有Tracker，請確認Tracker位置是否正確。
+RotationAndPosition:
+    延續上面測試, User 仰起頭, 按“ 藍色 ” 按鈕。
+  預期結果：
+    此時面板應轉到user視線的正前方。
+Disable:
+    延續上面測試, 按“ 黃色 ” 按鈕，走向座標(0,0,0)圖示和面板所在的位置。
+  預期結果：
+    取下HMD, 則user所在應和測試前標記的位置和方向接近。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Resource_Test",
+         "title":"312 Resource Test",
+         "instructionEN":"Test Steps:
+1. See the left widget and check \"Resource of current system language\".
+2. Summon quick menu and go to launcher then navigate to \"Settings\" -> \"General\" -> \"Language\" and set \"Deutsch\". Then back to this test scene.
+3. Swich back to the language you desired after checking the result.
+4. Check \"Resource of preferred language which had been set\".
+5. See the right widget named \"Get string by language and country value\" and check the three pairs of the string in blue and the string in orange.
+
+[Expect Result]
+1. Show the correct system language. \"English\", \"繁體中文\" and \"简体中文\" are supported.
+2. Show \"Sorry, only support tw, en, cn language !!!!!\".
+4. Show the corresponding resource strings of <eng,US>, <zh,TW> and <zh,CN>.
+5. The orange string and the blue string which above the orange string should be the same except the part of <language,country>.",
+         "instructionTW":"測試步驟：
+1. 看左邊的表格並且檢查\"Resource of current system language\"欄位。
+2. 透過quick menu回到Launcher並且移動到 \"設定\" -> \"一般\" -> \"語言\" 並設定語言為 \"Deutsch\"。然後回到此測試場景。
+3. 確認結果後請自行換回想要的語言。
+4. 檢查 \"Resource of preferred language which had been set\"。
+5. 看右邊的\"Get string by language and country value\"表格並檢查三對藍色和橘色字串。
+
+預期結果：
+1. 顯示正確裝置語言設定。目前支援 \"English\", \"繁體中文\" and \"简体中文\"。
+2. 顯示 \"Sorry, only support tw, en, cn language !!!!!\"。
+4. 顯示 <eng,US>, <zh,TW> and <zh,CN> 相對應的字串。
+5. 除了<language,country>的部分，橘色字串與其上的藍色字串應為相同字串。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"InteractionModeManager",
+         "title":"314 Interaction Mode",
+         "instructionEN":
+"Interaction Mode Test
+  Test 1: [Controller Mode]
+    a. The controller model will appear when a controller is connected.
+    b. Only one controller model has a beam.
+    c. You can press the trigger button to switch the controller beam.
+    d. The Touchpad / Trigger / Thumbstick buttons are available in Controller mode.
+    e. The cube will change color when being clicked.
+  Test 2: [Gaze Mode]
+    a. A reticle will appear.
+    b. The Touchpad / Trigger / Thumbstick buttons are available (depends on the device) in Gaze mode.
+    c. Timer+Button: The cube will change color when being gazd or clicked.
+    d. Button: The cube will change color when being clicked.
+    e. Timer: The cube will change color when being gazed.
+  Test 3: [Supports Natural Hand]
+    a. The hand model appears when you put your hands in front of the Camera.
+    b. Both hands will have the beam and pointer.
+    c. The cube will change color when being pinched.
+    d. The pointer will change color when pinching.",
+      "instructionTW":
+"測試步驟－－
+  測試 1: [Controller Mode]
+    a. 手把連線後會顯示手把模型。
+    b. 只有一支手把具有射線。
+    c. 可以按 Trigger 鍵來切換射線。
+    d. 可接受 Touchpad / Trigger / Thumbstick 三個按鍵輸入 (視裝置而定)。
+    e. 方塊被點擊時會變色。
+  測試 2: [Gaze Mode]
+    a. 會顯示凝視光圈。
+    b. 可接受 Touchpad / Trigger / Thumbstick 三個按鍵輸入 (視裝置而定)。
+    c. Timer+Button: 方塊被凝視或點擊時會變色。
+    d. Button: 方塊被點擊時會變色。
+    e. Timer: 方塊被凝視時會變色。
+  測試 3: [Supports Natural Hand]
+    a. 當你把手放到攝像機前面，將會顯示手的模型。
+    b. 雙手都具有射線。
+    c. 對準方塊並「捏住」時方塊會變色。
+    d. 光點在「捏」這個手勢時會變色。",
+      "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"WaveVR_Screenshot_Test",
+         "title":"201 Screenshot Test",
+         "instructionEN":"Screenshort Test
+
+    [test case: Screenshot (STEREO, MONO, DISTORTED_MONO mode)]
+        1. Gaze on the \"Blue\" button.
+ 
+ExpectedResult:
+   1. The Screenshot picture file Storaged to sdcard fold. [/sdcard/Pictures/Screenshots].
+   2. Can be see three picture of sceenshot (STEREO, MONO, DISTORTED_MONO) on the sence.",
+         "instructionTW":"Screenshot_Test測試
+【Finch / MI6 】測試步驟：
+1.按“ 藍色 ”按鈕, 依序測試開啟 Stereo, MONO, DISTORTED_MONO 模式拍攝場景。
+  預期結果：
+  1a.場景中可見 Stereo, MONO, DISTORTED_MONO 模式下,拍攝場景圖。",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"Foveation_Test",
+         "title":"202 Foveation Test",
+         "instructionEN":"Steps:
+1. Mode should be \"Default\" in the begining, no effect if press
+ any parameter setting button.And now press \"Mode : Enable\".
+2. Press \"PeriperalQuality:Low\" on the left side, and -1,-1 on the left side.
+  ExpectedResult:
+  The upper right region of your left eye will become fuzzy.
+3. Pess \"PeriperalQuality:Medium\" on the left side.
+  ExpectedResult:
+  The fuzzy region of your left eye will become clearer.
+4. Press \"PeriperalQuality:High\" on the left side.
+  ExpectedResult:
+  The fuzzy region of your left eye will become much clearer.
+5. Press 1,1 on the left side.
+  ExpectedResult:
+  The fuzzy region of your left eye move to bottom left.
+6. Press 60(degree) on the left side.
+  ExpectedResult:
+  The fuzzy region of your left eye become bigger.
+7. Repeat 2, but the buttons on the right size.  
+  ExpectedResult:
+  The upper right region of your right eye will become fuzzy.
+8. Repeat 3, but the buttons on the right size.  
+  ExpectedResult:
+  The fuzzy region of your right eye will become clearer.
+9. Repeat 4, but the buttons on the right size.
+  ExpectedResult:
+  The fuzzy region of your left eye will become much clearer.
+10. Repeat 5, but the buttons on the right size.
+  ExpectedResult:
+  The fuzzy region of your right eye move to bottom left.
+11. Repeat 6, but the buttons on the right size.
+  ExpectedResult:
+  The fuzzy region of your right eye become bigger.
+12. Press \"Foveation is enabled?\" button let it show \"False\"
+  ExpectedResult:
+  Both two eyes can not see any fuzzy region.
+Note: \"Mode : Disable\" will disable all foveation feature at any time. 
+There is no effect if you press any parameter setting button.",
+         "instructionTW":"[Finch/MI6] 測試步驟－－  (手把必須連線)
+1.一開始Mode應為Default，按任何鍵都不會有作用。
+接下來按下\"Mode : Enable\"。
+2.按下左邊那排的\"PeriperalQuality:Low\"，以及左邊那一排的-1,-1。
+  預期結果:
+  左眼的右上方會呈現模糊顆粒狀。
+3.按下左邊那排的\"PeriperalQuality:Medium\"。
+  預期結果:
+  左眼的右上方模糊顆粒程度變輕微。
+4.按下左邊那排的\"PeriperalQuality:High\"。
+  預期結果:
+  左眼的右上方模糊顆粒程度變更加輕微。
+5.按下左邊那排的1,1。
+  預期結果:
+  左眼的模糊顆粒區域變成左眼的左下方。
+6.按下左邊那排的60(度)
+  預期結果:
+  左眼模糊區域變大。
+7.重複2，但皆改為右邊那排。  
+  預期結果:
+  右眼的右上方會呈現模糊顆粒狀。
+8.重複3，但改為右邊那排。
+  預期結果:
+  右眼的右上方模糊顆粒程度變輕微。
+9.重複4，但改為右邊那排。
+  預期結果:
+  右眼的右上方模糊顆粒程度變更加輕微。
+10.重複5，但改為右邊那排。
+  預期結果:
+  右眼的模糊顆粒區域變成右眼的左下方。
+11.重複六，但改為右邊那排。
+  預期結果:
+  右眼的模糊區域變大。
+12.按下\"Foveation is enabled?\"按鈕後顯示False。
+  預期結果:
+  兩眼皆看不到模糊顆粒區域。
+注意: \"Mode : Disable\" 將會在任意時間取消所有Foveation作用。
+此時按下任何調整參數鍵皆無作用。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"SplashScreen_Test",
+         "title":"203 Splash Screen Test",
+         "instructionEN":"Splash Screen Audo Loading Test
+    Test1:
+        1. Press the button \"Enable Auto Loading\".
+        2. Press the button \"Reload Level\".   
+      ExpectedResults:
+            Vive logo shows.
+    Test2:
+        1. Press the button \"Disable Auto Loading\".
+        2. Press the button \"Reload Level\".  
+      ExpectedResults:
+            Vive logo does not show.
+
+Splash Screen Force Show Test
+    Step:
+        Press the other buttons such as \"Size Scale\", \"Move Left Lower\"
+, \"Center\", \"Move Right Upper\", \"Yello\", \"Red\", \"Black\", \"No BG\" to set config of splash screen.
+      ExpectedResults:
+            The settings of Splash Screen will be kept and apply the pressed config.",
+         "instructionTW":"[Finch/MI6] 測試步驟－－  (手把必須連線)
+1.按下 Splash Auto Loading按鈕。下方顯示AutoLoad is (true)。
+2.按下 Reload Level。
+  預期結果:
+  出現藍色Vive logo。
+3.按下按鈕Size Scale:1 / Size Scale:0.5 / Size Scale:0.1。
+  預期結果:
+  每按一個按鈕Vive logo都會出現並且依數字比例越來越小。
+4.按下按鈕Move Left Lower / Center / Move Right Upper。
+  預期結果:
+  每按一個按鈕Vive logo都會出現並且顯示在 左下/中央/右上。
+5.按下按鈕Yellow / Red / Black / No BG。
+  預期結果:
+  每按一個按鈕Vive logo都會出現並且替換背景顏色 黃色/紅色/黑色/透明。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"RenderMask_Test",
+         "title":"205 Render Mask Test",
+         "instructionEN":"RenderMask Test
+[Test case1: RenderMask (Option by Global Settings 2)]
+    1. Press the \"Blue\" button.
+[Test case2: RenderMask (Option by Local Settings Enable 1)]
+    1. Press the \"Red\" button.
+[Test case3: RenderMask (Option by Local Settings Disable 0)]
+    1. Press the \"Yellow\" button.
+ 
+ExpectedResult:
+    1. Visible green color RenderMask on the Scene is
+ decide by EnableRenderMask value is 2 or 1 in WaveVR_Pawn.
+    2. Invisible green color RenderMask on the Scene is
+ decide by EnableRenderMask value is 0 in WaveVR_Pawn.",
+         "instructionTW":"RenderMask測試
+【Finch / MI6 】測試步驟：
+1.按“藍色”按鈕, RenderMask（測試預設值:啟用）。
+  預期結果：
+  1a.場景中可見綠色的RenderMask。
+2.按“紅色”按鈕, RenderMask（手動設置:啟用）。
+  預期結果：
+  2a.場景中可見綠色的RenderMask。
+3.按“黃色”按鈕, RenderMask（手動設置:關閉）。
+  預期結果：
+  3a.場景中的看不見綠色RenderMask。",
+         "hidden":true,
+         "internal":true
+      },
+      {
+         "pathName":"PosePredict_Test",
+         "title":"102 Pose Predict Test",
+         "instructionEN":"Case1
+    1. Press the \"Enable predict HMD rotation\" button.
+    2. Move left/right, up/down, forward/backword and look around.
+Case2
+    1. Press the \"Disable predict HMD rotation\" button.
+    2. (Same as Case1)
+Case3:
+    1. Press the \"Enable predict controller rotation& position\" button.
+    2. Move left/right, up/down, forward/backword.
+    3. Look at the controllers.
+    4. Rotate controller by different ways
+Case4:
+    1. Press the \"Disable predict controller rotation& position\" button. 
+    2. (Same as C+H22ase3)
+    3. (Same as Case3)
+    4. (Same as Case3)
+
+ExpectedResult:
+    Case1.
+        For remote rendering APP : you should find static objects are moving smoothly.
+        For local rendering APP : You should not observe any abnormal like jitter or vibration.
+    Case2.
+        For remote rendering APP : you could find static objects are a little bit vibrating or slow motion.
+        For local rendering APP : (Same as Case 1)
+    Case3.
+        For remote rendering APP : you should find the controllers are moving smoothly.
+        For local rendering APP : (Same as Case 1)
+    Case4.
+        For remote rendering APP : you could find the controllers are a little bit vibrating or slow motion.
+        For local rendering APP : (Same as Case 1)",
+         "instructionTW":"[Finch/MI6] 測試步驟－－  (手把必須連線)
+1.按下按鈕\"Case 1 Enable predict HMD position\"，任意移動環顧四周立方體。
+  預期結果:
+  無任何類似抖動破圖或震動的異常。
+2.按下按鈕\"Case 2 Disable predict HMD position\"，任意移動環顧四周立方體。
+  預期結果:
+  無任何類似抖動破圖或震動的異常。
+3.按下按鈕\"Case 3 Enable predict controller rotation & position\"，任意移動並觀察控制器。
+  預期結果:
+  無任何類似抖動破圖或震動的異常。
+1.按下按鈕\"Case 4 Disable predict controller rotation & position\"，任意移動並觀察控制器。
+  預期結果:
+  無任何類似抖動破圖或震動的異常。",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"WaveVR_FadeOut_Test",
+         "title":"206 FadeOut Test",
+         "instructionEN":"    Step:
+    Gaze on the \"Blue ball\".
+
+    ExpectedResult:
+        Switch to launcher with FadeOut effect(become darker).
+
+    Note: Please skip this test if \"Enable FadeOut\" hadn't been selected",
+         "instructionTW":"    步驟:
+	凝視藍色球
+
+    預期結果:
+	    漸漸暗下並且切換到Launcher。
+
+	注意: 請略過此場景如果\"Enable FadeOut\"尚未設定。",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"LoadingTest",
+         "title":"Loading Test",
+         "instructionEN":"EN",
+         "instructionTW":"TW",
+         "hidden":true,
+         "internal":true
+      },
+      {
+         "pathName":"BouncyBallsLevel",
+         "title":"315 Bouncy Balls",
+         "instructionEN":"EN",
+         "instructionTW":"TW",
+         "hidden":true,
+         "internal":false
+      },
+      {
+         "pathName":"PD_Test_Manual",
+         "title":"316 Pixel Density",
+         "instructionEN":"1. Press buttons which PD value is less than 1.0.
+Expect: Resolution change.  FPS might improved.
+
+2. Press buttons which PD value is greater than 1.0.
+Expect: Resolution is simular to PD=1.0.  FPS might deprave.
+
+3. Press PD Auto button.  (Not for test)
+Expect: Change PixelDensity every frame. For a while, app crash.
+
+Warning: When PixelDensity changed too many times, app will crash.
+This is Unreal's limitaion.  We only need to know if the 
+PixelDensity will take effect in test case 1 and 2.  And should 
+not do the pressure test like case 3.",
+         "instructionTW":"1.按PD小於1的按鈕
+預期結果: 解析度改變，FPS可能會提升
+2.按PD大於1的按鈕
+預期結果: 解析度約等於1.0狀態，FPS可能會下降
+3.按PD Auto按鈕 (非測試)
+預期結果: 不停的自動切換PD，久了會掛掉
+警告：切換過多次會掛掉是Unreal的限制，視為正常現象，
+1與2側項有效果即可，不應做壓力測試。",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"RenderDocTest",
+         "title":"317 RenderDoc Sample",
+         "instructionEN":"RenderDoc Feature in Wave's Project Settings must be enabled
+before build this APK.  However the RenderDoc profiling tool
+will impact the perforamce of normal test cases.  Therefore 
+the RenderDoc is disabled by default.  In the common test, 
+you cannot test this test case.
+
+1. RenderDoc status shows \"Available\"
+2. Open RenderDoc application on PC side, and Attach this 
+   process.
+3. Click \"Capture Frame\" button
+   Expect: On PC side, a new captured frame appear after 1 second.
+
+4. Click \"Set Auto Capture Frame\"
+   Expect: On PC side, a captured frame increased after 3 seconds.
+           And every 10 seconds, one captured frame increased.
+
+5  After Step 4 for 23 seconds, click \"Disable Auto Capture Frame\".
+   Expect: On PC side, the captured frame count no longer increased.",
+         "instructionTW":"此項目必須在建置 APK前由開發者開啟RenderDoc功能，
+會嚴重影響一般測試，因此預設是關閉的。
+在一般測試中，無法測試此項目。
+
+1. RenderDoc狀態顯示Available
+2. 開啟RenderDoc PC端應用程式，並且Attach此Process。
+3. 按下Capture Frame：
+   Expect: 1秒後出現一個captured frame在PC端
+   
+4. 按下Set Auto Capture Frame：
+   Expect: 3秒後出現一個Frame Capture在PC端，
+           之後每十秒增加一個captured frame。
+
+5. 步驟4經過23秒後，按下Disable Auto Capture Frame
+   Expect: PC端不再增加captured frame",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"NaturalHand",
+         "title":"318 Natural Hand",
+         "instructionEN":"NaturalHand Test Steps --
+1. Gaze on the button to enable/disable the gesture or tracking.
+2. After enabling the gesture, you can see the current gesture on back canvas.
+3. After enabling the tracking, the simulated hand will be shown when you put your hand in front of the camera.",
+         "instructionTW":"NaturalHand 測試步驟－－
+1.凝視按鈕以開啟／關閉手勢 (Gesture) 或追蹤 (Tracking)。
+2.開啟手勢後會在後方文字屏幕上顯示目前的手勢。
+3.開啟追蹤後將手放在鏡頭前方，會顯示出模擬手掌。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"PoseMode_Test",
+         "title":"319 PoseMode Test",
+         "instructionEN":"Move controller's Thumbstick toward {left, up, right, down} and press down.
+ExpectedResult:
+Pose mode switch to {Raw, Trigger, Panel, Handle} and shows the against ShiftedPosition and ShiftedRotation.",
+         "instructionTW":"將Thumbstick向 {左，上，右，下}移動並且按下
+預期結果:
+Pose切換為{Raw, Trigger, Panel, Handle}並且顯示相對應的ShiftedPosition和ShiftedRotation。 ",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"AMCModeTest",
+         "title":"206 AMCMode Test",
+         "instructionEN":"
+<b>This level is designed for low FPS.</>
+
+<H2>UMC test step:</>
+    1. Press AMC Mode::Off
+    2. Press AMC Mode::UMC
+<H2>Expection:</>
+    1. FPS become lower than half refresh rate.
+       For example, 45 or 37.
+    2. Current AMC status shows \"UMC\".
+       (Need pointer to the status text to help it update.)
+
+<H2>SetFrameRate</> (<i>Only for Elite</>)
+    If there are number buttons below, press any one will effect this application's 
+    FPS limit.  No guarantee application can reach that FPS.  If you set a low FPS 
+    and the FPS is still higher than the value you set, that might be a problem.
+
+<H2>Note:</>
+    The jitter reduce may not obvious since scene's loading is too heavy.
+    PMC is not supported on Unreal platform.
+    Don't try to use other buttons.	
+",
+         "instructionTW":"
+<b>本場景是以低FPS為目標設計的。</>
+
+<H2>UMC測試步驟:</>
+    1. 按 AMC Mode::Off
+    2. 按 AMC Mode::UMC
+<H2>預期結果:</>
+    1. FPS變成低於二分之一refresh rate， 比如45 or 37.
+    2. Current AMC status 顯示 \"UMC\"
+       (需要指標移到狀態文字協助其更新)
+
+<H2>SetFrameRate</> (只適用Elite</>)
+    如果底下欄位有出現數字按鈕，按下任一個，會影響此App最大的FPS，但不保證可以達到。
+	若設了比較低的數值，但是發現FPS仍然高過它，則有問題。
+
+<H2>Note:</>
+    抖動的減輕程度也許不明顯，因為場景本身負載很重。
+    Unreal不支援PMC。
+    <i>請勿測試其他按鈕，是測量工程用的。</>
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"DynamicFRSample",
+         "title":"320 DynamicFR Sample",
+         "instructionEN":"A sample of Dynamic Foveated Rendering
+
+DynamicFR can help increase FPS by applying more aggressive FR parameters when
+HMD in a high motion.
+
+This level is a sample to show how to make Dynamic FR.  Not afeature test.
+Nothing here need to be proved.
+
+The FR's parameters will be updated according to HMD's velocity and angular velocity.
+When HMD's motion energy is high, lower the resolution. And when HMD's motion
+energy is low, let the resolution back to normal.
+
+If DynamicFR not work, please try disable AQ or enable FoveatedRendering.
+",
+         "instructionTW":"Dynamic Foveation 的使用範例
+
+這個場景不是測試場景。
+
+Foveated Rendering的參數會隨著HMD的動態而改變。
+當頭部的動態較高時，降低畫質，在頭部動態降低時，恢復畫質。
+
+如果DynamicFR無法作用，請試著關閉AQ或允許FoveatedRendering。
+",
+         "hidden":true,
+         "internal":false
+      },
+      {
+         "pathName":"GamutTest",
+         "title":"207 Gamut Test",
+         "instructionEN":"This test will only be tested by color expert.
+
+Daily test is not necessary.
+",
+         "instructionTW":"此場景只會被色彩專家測試。
+日常測試是不必要的
+",
+         "hidden":true,
+         "internal":true
+      },
+      {
+         "pathName":"StereoLayer_Test",
+         "title":"321 StereoLayer Test",
+         "instructionEN":"This test level is for verifying the functionality of Stereo Layers.
+
+         To verify if Stereo Layers is functioning properly:
+         1. There should be three panels with the same VIVE logo on them.
+         2. The three panels should be positioned side by side and have the same size.
+         3. The color of the images should be identical to one another.
+         4. The overlay rendered on the left and underlay on the right should have a better visual quality than the panel rendered by Unreal in the middle.
+         5. It is normal for the underlay on the right to have black borders and strange blending with the controller pointer and beam (controller model should occlude underlay).
+         6. Push joystick toward left or right on your right controller to move the right panel.
+
+         Note: Not all devices support Multi-Layer (Only supported in WVR Rendering Path)",
+         "instructionTW":"這場景是為驗證Stereo Layers 功能而設。
+         
+         請參考以下細項以驗證Stereo Layers 功能正常：
+         1. 場景中應有兩個平面，而個平面上顯示相同的VIVE logo.
+         2. 三個平面大小相同且並排。
+         3. 三個平面的顏色一致。
+         4. 左邊的 Overlay 和右邊的 Underlay 畫質應比中間由Unreal 成像的平面好。
+         5. 右邊 Underlay 有黑邊框以及和Controller pointer 跟 beam 重疊時有blending 問題屬正常現像。
+         6. 左右推動右手控制器的搖桿去移動右側的Underlay圖片確認可以移動。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"StereoLayer_TestWidget",
+         "title":"322 StereoLayer Test Widget",
+         "instructionEN":"This test level is for verifying the functionality of Stereo Layers.
+
+         To verify if Stereo Layers is functioning properly:
+         1. There should be three panels with the same content on them.
+         2. The three panels should be positioned side by side and have the same size.
+         3. The color of the images should be identical to one another.
+         4. The overlay rendered on the left and underlay on the right should have a better visual quality than the panel rendered by Unreal in the middle.
+         5. It is normal for the underlay on the right to have a black background and strange blending with the controller pointer and beam (controller model should occlude underlay).
+         6. Push joystick toward left or right on your right controller to move the right panel.
+
+         Note: Not all devices support Multi-Layer (Only supported in WVR Rendering Path)",
+         "instructionTW":"這場景是為驗證Stereo Layers 功能而設。
+         
+         請參考以下細項以驗證Stereo Layers 功能正常：
+         1. 場景中應有兩個平面，而個平面上顯示相同的內容.
+         2. 三個平面大小相同且並排。
+         3. 三個平面的顏色一致。
+         4. 左邊的 Overlay 和右邊的 Underlay 畫質應比中間由Unreal 成像的平面好。
+         5. 右邊 Underlay 有黑邊框以及和Controller pointer 跟 beam 重疊時有blending 問題屬正常現像。
+         6. 左右推動右手控制器的搖桿去移動右側的Underlay平面確認可以移動。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"FrameSharpnessEnhancement_Test",
+         "title":"323 Frame Sharpness Enhancement Test",
+         "instructionEN":"    This test is for verifying the functionality of Frame Sharpness Enhancement.
+
+    Steps:
+        Press the buttons named 0.0 to 1.0 to change the sharpness level.
+
+    ExpectedResult:
+        The first line should show the level value against the button which just been pressed. The higher the level set, the more clear the text become.
+
+    Note: Please skip this test if the project settings \"Frame Sharpness Enhancement\" hadn't been selected",
+         "instructionTW":"    此場景是為了驗證Frame Sharpness Enhancement功能而設。
+
+    步驟:
+        按下命名為0.0到1.0的按鈕去調整銳利程度。
+
+    預期結果:
+        第一行應顯示按下按鈕對應的數值。所設的數值越高，文字看起來越銳利。
+
+	注意: 若\"Frame Sharpness Enhancement\"尚未選取請略過此場景。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Bracelet",
+         "title":"324 Bracelet",
+         "instructionEN":"Bracelet Test Steps --
+1. Clicks \"Start Tracker\" or \"Stop Tracker\" button to enable/disable Tracker.
+2. If you click \"Wear Bracelet\", the hand's position will follow the bracelet.
+3. If you click \"Doff Bracelet\", the hand's position will NOT follow the bracelet.
+4. If you click \"Enable Hold\", you can see the \"Motion\" text becomes \"Hold\" when you are holding.
+5. You can see the information of bracelet in the front texts.",
+         "instructionTW":"Bracelet 測試步驟－－
+1.點選按鈕以開啟或關閉 Tracker 功能。
+2.選擇 \"Wear Bracelet\" 之後，手會跟著手環移動。
+3.選擇 \"Doff Bracelet\" 之後，手不會跟著手環。
+4.點選了 \"Enable Hold\" 之後，當握槍從腰部拔出時，\"Motion\" 會顯示 \"Hold\"。
+5.畫面上會顯示手環的各種資訊。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"Passthrough_Test",
+         "title":"325 Passthrough",
+         "instructionEN":"
+<b>Steps:</>
+1. Press the Alpha value 0.0 to 1.0 one by one.
+2. Press Alpha 0.7 then press the four buttons below <b>DelaySubmit and ShowIndicator</>.
+   You should use <b>button A</> to hide Passthrough whenever press each button.
+3. Make sure the Passthrough Overlay is hiding then press ShowUnderlay and HideUnderlay.
+<b>Expection:</>
+1. Passthrough will show in a few seconds and hide automatically. The Passthrough will 
+   become obvious when the Alpha is closed to 1.0.
+2. Passthrough will show. If DelaySubmit is ture, you will see the content become laggy;
+   If ShowIndicator is true, you will see the indicator <b>R</> and <b>L</> in Passthrough 
+   picture.   The Passthrough will hide immediately when you press the <b>button A</>.
+3. The passthrough should show when press ShowUnderlay and hide when press HideUnderlay.
+   The passthough underlay should not cover all the widgets.
+
+<H2>Passthrough Image Quality</> (<i>Only for Elite</>)
+<i>This is a global setting, and will effect other application.</>
+Steps:  Press <b>High</>, <b>Medium</>, or <b>Low</> in <b>Quality</>
+Expection:   When passthrough is ON, you can tell the quality different between 
+             the 3 levels.
+
+<H2>Passthrough Focus</> (<i>Only for Elite</>)
+<i>This is a global setting, and will effect other application.</>
+When you use <b>Hand</>, the passthrough's focus will follow your controller or hand (
+if hand tracking is ON).  You may see the passthrough image is twisted around your hand.
+When you use <b>Environment</>, the passthrough's focuse will behave like normal.
+
+<H2>SetFrameRate</> (<i>Only for Elite</>)
+If there are number buttons below, press any one will effect this application's FPS limit.
+No guarantee application can reach that FPS.  If you set a low FPS and the FPS is still high, that might be a problem.
+",
+"instructionTW":"
+<b>步驟:</>
+1. 按下Alpha值0.0到1.0。
+2. 按下Alpha值0.7然後按下<b>DelaySubmit and ShowIndicator</>下方的四個按鈕。每按
+   一個按鈕都要透過<b>按鈕A</>去隱藏Passthrough。
+3. 確認Passthrough Overlay已經隱藏後，點擊ShowUnderlay和HideUnderlay。
+<b>Expection:</>
+1. Passthrough會顯示幾秒後自動隱藏。Passthrough會隨著Alpha數值越靠近1.0越來越明顯。
+2. Passthrough會顯示。如果DelaySubmit為true，你會看到場景畫面變得延遲。如果
+   ShowIndicator為true，你會在Passthrough畫面內看到標示圖<b>R</>及<b>L</>。
+   當你按下<b>按鈕A</>，Passthrough會立即隱藏。
+3. 當按下ShowUnderlay時Passthrough會顯示，按下HideUnderlay時Passthrough則隱藏。
+   注意此時Passthrough不應遮蔽所有面板。
+
+<H2>Passthrough Image Quality</> (只適用Elite</>)
+這個是全域效果，其他app也會受到影響。</>
+步驟: 按下<b>Quality</>中<b>High</>, <b>Medium</>, <b>Low</>其中一個。
+期待: 當passthrough開啟時，你可以看出三種等級的畫質差異。
+
+<H2>Passthrough Focus</> (<i>只適用Elite</>)
+<i>這個是全域效果，其他app也會受到影響。</>
+當你選<b>Hand</>時passthrough的焦點會跟隨你的控制器或是手(若有開啟手追蹤) 你可能
+發現手附近的影像被扭曲。
+當你選<b>Environment</>時passthrough的焦點並不會有任何變化。
+
+<H2>SetFrameRate</> (只適用Elite</>)
+如果有出現數字按鈕，按下任一個，會影響此App最大的FPS，但不保證可以達到。如果設了
+比較低，但是發現FPS仍然很高則有問題。
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"RaycastEyeTracking",
+         "title":"326 Eye Tracking",
+         "instructionEN":"Eye Tracking Test Steps --
+1. The gaze pointer will move following your sight.
+2. If \"Simultaneous Interaction\" is enabled, you can use controller/hand/gaze concurrently to interact with objects.",
+         "instructionTW":"Eye Tracking 測試步驟－－
+1.凝視光點會隨著視線而移動。
+2.如果啟用 \"Simultaneous Interaction\"，你可以同時使用控制器、雙手以及視線凝視操控。",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"FacialTrackingMap",
+         "title":"327 Facial Tracking",
+         "instructionEN":"
+Facial Tracking Test --
+1. You can see the face model in front of you.
+2. You can see the Lip & Eye Expression values on the left or right panel.",
+         "instructionTW":"
+Facial Tracking 測試－－
+1.正前方可以看到臉部模型。
+2.左右方可以看到 Lip 和 Eye Expression 的值。",
+         "hidden":false,
+         "internal":true
+      },
+      {
+         "pathName":"ProjectedPassthroughTest",
+         "title":"325 Projected Passthrough",
+         "instructionEN":"
+Step:
+TestCase1: UE4.26 only. Hold left hand's trigger and move left hand controller.
+           The controller moved area will become passthrough.
+TestCase2: Choose \"Square\" or \"Cuboid\".  An passthrough area 
+           will fixed on your left hand.  The width of the area will resized by time.
+TestCase3: Change alpha value during test case 1 and 2.
+           Should see virtual controllers or background when alpha is 0.5.
+TestCase4: Turn off Projected Passthrough.  The passthrough area should gone.
+",
+         "instructionTW":"
+步驟:
+測試1: 按著左手Trigger並且移動左手控制器，控制器經過的區域會變成Passthrough。
+測試2: 選擇使用方形或是方塊，會有一個Passthrough區域固定在左手上，
+       會隨時間變動區域的寬度。
+測試3: 在以上項目中修改Alpha值，半透明時，可從穿透區域看到虛擬的控制器或背景。
+測試4: 關閉Projected Passthrough，穿透區域應該消失。
+
+",
+         "hidden":false,
+         "internal":false
+      },{
+         "pathName":"AnchorTest",
+         "title":"330 Anchor Test",
+         "instructionEN":"
+<H1>Spatial Anchor test step:</>
+1. Press any one of Create Anchor button.
+2. A passthrough will show around your right hand controller.
+3. Find the real world anchor object in passthrough.
+4. Use <b>Right controller</> to attach the real world anchor object.
+5. Then press <b>Thumbstick</> button to confirm.
+6. Update all Anchors by Enumerate Anchors button.
+7. Update current Anchors' state by Update button.
+
+This test is duplicated in ScenePerception.
+",
+         "instructionTW":"
+測試方法
+A. 建立Anchor
+  按下任一名稱的CreateAnchor按鈕。
+  在Passthrough中找到現實世界中Anchor的位置。
+  使用右手控制器，觸碰它並按下Thumbstick確認。
+B. 清除系統中的Anchor
+  按下Clean Anchor
+按下更新Enumerate Anchor按鈕，列出現存的所有Anchor。
+剛才新增的應該會在。觀察是否有在追蹤。
+使用自動更新或按下Update按鈕，更新現有的Anchor狀態。
+
+此測試與ScenePerception測試重複。可用作交叉測試。
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"ScenePerceptionTest",
+         "title":"331 Scene Perception Test",
+         "instructionEN":"
+<H1>Only for Focus Elite</>
+Before this test, you should create walls, door, windows, table, and Objects in
+<b>MR Settings</>.  And you should also do the scene meshes scan.
+
+Four major tests here: <b>Perception, Plane, Object, and Mesh.</>
+    All functions need <b>Scene</> check box is enabled.  If not enabled,
+    means this device does not supported <b>Scene</> feature.
+<H2>Perception:</> Check <b>2D Plane</>, <b>3D Object</> and <b>Mesh</> checkboxes. 
+If not allow to check, means not support.  If checked, you can use checked features.
+<H2>Plane:</> Test if we can get planes defined by <b>MR Settings</>.  The 
+    <b>Auto Update Plane</> is default enabled.  You should disable 
+    <b>Auto Update Plane</> to test filter, load, and destroy.
+<H2>Object:</> Test if we can get objects defined by <b>MR Settings</>.  The 
+    <b>Auto Update Object</> is default enabled.  You should disable 
+    <b>Auto Update Object</> to test load, and destroy.
+<H2>Mesh:</> Before you test, you should scan scene meshes by <b>MR Settings</>.
+	Choose a <b>Mesh Type</>.  <b>Collision</> will be looser than <b>Visual</>.
+	Click <b>Get SceneMeshes</> to show the scene meshes.
+
+This is not a Major test here, but you can still try:
+<H2>Anchor:</>
+    Please use the panel on the right.  Choose one of <b>Create Anchor</>
+    , use left controller to locate a point, and then pull the left
+    controller's trigger.  An anchor will be saved into system.  The 
+    <b>Auto update</>is enabled by default.  you can try disable it to
+    test <b>Clean (local)</>.  <b>Clean Anchor</>will delete the anchors
+    from system.
+
+<H2>Note:</> Due to controller beam is not designed well, please avoid two
+    beams pointing to the panel at the same time.
+",
+         "instructionTW":"
+<H1>只能在Focus Elite上測試</>
+在測試之前，你應該先創造一些牆、桌面、窗以及門。並且掃描場景。
+
+有四個主要測項：Perception、Plane、Object、以及Mesh。但所有功能都需要
+    <b>Scene</>功能被勾選。如果<b>Scene</>無法勾選，代表機器可能不支援此功能。
+<H2>Perception：</>勾選並且可以被勾選，才能使用Plane、Object、Mesh功能。
+<H2>Plane：</>取得從MR Settings製作的平面。可套用過濾器取得對應的平面。
+    預設開啟自動更新，關閉自動更新才能以手動方式呼叫讀取與刪除。
+<H2>Plane：</>取得從MR Settings製作的物件。
+    預設開啟自動更新，關閉自動更新才能以手動方式呼叫讀取與刪除。
+<H2>Mesh：需先使用掃描程式建立Scene Mesh才能在此測試。Scene Mesh中<b>Visual</>的組成
+    較複雜，<b>Collision</>的較簡單。點擊GetSceneMeshes，取得的會顯示出來。
+
+非主要測項：	
+<H2>Anchor：</>請使用右邊的面板。選一個Create Anchor，用左手控制器找個位置，按下
+    Trigger。一個Anchor就會產生並存於系統。請小心不要在按Trigger時，同時
+    按到面板，因為左右射線都會觸發面板上的功能。Destroy Anchor local可以
+    清除場上的物件，但是自動更新會讀取回來。Destroy Anchor會清除現存於系統
+    的Anchor。
+
+注意：因為控制器射線設計問題，很難點到東西，請避免兩個控制器的射線都指在面板上。
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"ScenePerceptionAutoTest",
+         "title":"332 Scene Perception Auto Run",
+         "instructionEN":"
+<H1>Only for Focus Elite</>
+Before this test, you should create walls, door, windows, and table. And you
+should also do the scene meshes scan.  If you didn't have any anchor, go to 
+<b>AnchorTest</> to create some.
+
+Auto load all Scene Plane / Scene Object / Scene Meshe / Anchor.
+Auto update all status.
+
+This level is a demo level for developer.  Please use ScenePerceptionTest for 
+regular test.
+",
+         "instructionTW":"
+<H1>只能在Focus Elite上測試</>
+在測試之前，你應該先創造一些牆、桌面、窗以及門。並且掃描場景。如果沒有Anchor，
+請到<b>AnchorTest</>創造一些出來。
+
+自動載入Scene Plane / Scene Object / Scene Mesh / Anchor。並且自動更新狀態。
+
+這個是給開發者的示範場景。正規測試請用ScenePerceptionTest。
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+         "pathName":"MarkerTest",
+         "title":"333 MarkerTest",
+         "instructionEN":"
+<H1>Only for Focus Elite</>
+Before this test, you need have some <b>printed ArUco markers</>.
+Only support ArUco markers generated by <b>dictionary: 4x4 100</>.
+
+First Time Test
+Steps:
+1. Check <b>Marker</>
+2. Check <b>ArUco Observer</>
+3. Check <b>ArUco Detecting</>
+4. Look at your printed ArUco markers until detected.
+   A green frame will appear.  And the marker's infomation will
+   show in the list.  
+5. In the marker's information, there are two checkers.
+   Check the first checker to set it <b>Trackable</>
+6. After set all trackable markers you need,
+   Uncheck <b>ArUco Detecting</>
+   You will see only trackable markers' infomation still exist in the list.
+7. Check the second checker to <b>start tracking</> the marker.
+8. You can move the marker to see if it moved.
+9. You can leave this level after you tested.
+
+Second Time Test
+1. Check <b>Marker</>
+2. Check <b>ArUco Observer</>
+3. The previous trackable markers will show in the list without detection.
+",
+         "instructionTW":"
+<H1>只能在Focus Elite上測試</>
+在測試之前，你應該在真實世界準備<b>印好的ArUco Marker</>。
+只支援由<b>dictionary: 4x4 100</>產生的ArUco Marker。
+
+初次測試
+Steps:
+1. 勾選 <b>Marker</>
+2. 勾選 <b>ArUco Observer</>
+3. 勾選 <b>ArUco Detecting</>
+4. 看著你印出來的ArUco Marker直到他們被偵測到。
+   綠色的框會出現。而且列表中會出現Marker的資訊。
+5. 在marker的資訊中，有兩個Checker
+   勾選第一個checker將該Marker設為<b>可追蹤</>
+6. 當你設完所有想追蹤的Marker後，取消勾選<b>ArUco Detecting</>。
+   你會看到列表中只剩下可追蹤的Marker。
+7. 勾選第二個checker將該Marker設為<b>追蹤中</>
+8. 你可以移動你印出來的ArUco Marker看他是否會動。
+9. 測試完可以離開測試場景
+
+再次測試
+1. 勾選 <b>Marker</>
+2. 勾選 <b>ArUco Observer</>
+3. 不須使用偵測，先前設為可追蹤的Marker就會出現在列表中。
+",
+         "hidden":false,
+         "internal":false
+      },
+      {
+
+         "pathName":"None",
+         "title":"Quit (Click twice)",
+         "instructionEN":"EN",
+         "instructionTW":"TW",
+         "hidden":false,
+         "internal":false
+      }
+   ]
+}

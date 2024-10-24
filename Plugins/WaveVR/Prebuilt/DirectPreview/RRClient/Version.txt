@@ -1,0 +1,8 @@
+[ProductVersion]
+Version=1.0.16.9
+ReleaseDate=2023/04/17
+ReleaseTime=18:10
+
+[Includes]
+Vive_rrClient.apk=1.0.16.9
+Vive_vsClient.apk=1.0.16.9e
