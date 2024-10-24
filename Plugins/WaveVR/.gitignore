@@ -1,6 +1,0 @@
-Binaries
-Intermediate
-Source/WVR/include/wvr
-Source/WVR/lib/android/repository
-Source/WVR/lib/android/armeabi-v7a/*.so
-Source/WVR/lib/android/arm64-v8a/*.so

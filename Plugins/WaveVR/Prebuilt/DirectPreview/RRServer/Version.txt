@@ -1,2 +1,0 @@
-[PRODUCT_VERSION]
-Version=Release
